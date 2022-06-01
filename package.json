@@ -16,11 +16,12 @@
     "@rushstack/eslint-patch": "^1.1.0",
     "@vitejs/plugin-vue": "^2.3.3",
     "@vue/eslint-config-prettier": "^7.0.0",
+    "esbuild-wasm": "latest",
     "eslint": "^8.5.0",
     "eslint-plugin-vue": "^8.2.0",
     "prettier": "^2.5.1",
-    "vite": "^2.9.9",
-    "esbuild-wasm": "latest"
+    "sass": "^1.52.1",
+    "vite": "^2.9.9"
   },
   "pnpm": {
     "overrides": {
