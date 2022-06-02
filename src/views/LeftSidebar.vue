@@ -25,18 +25,19 @@ const startedChats = computed(() => {
 })
 
 const listedChats = computed(() => {
-  if (search.value !== '' && search.value !== null) {
-    return startedChats.value.filter(contact => {
-      return (
-        contact.contactName.toLowerCase().search(search.value.toLowerCase()) !==
-        -1
-      )
-    })
-  }
-  console.log('contacts.value', contacts.value.length)
+  // Choose either full list of contacts or chats
+  const lowerCasedSearch = search.value.toLowerCase()
+  const list =
+    search.value !== '' && search.value !== null
+      ? contacts.value
+      : startedChats.value
 
-  return contacts.value
-  // search.value
+  // Filter by name
+  return list.filter(contact => {
+    const name = contact.contactName.toLowerCase()
+
+    return name.search(lowerCasedSearch) !== -1
+  })
 })
 </script>
 
