@@ -4,13 +4,13 @@ import LeftSidebar from '@/views/LeftSidebar.vue'
 </script>
 
 <template>
-  <header>
+  <nav class="main-nav">
     <img alt="Basf logo" class="logo" src="@/assets/logo-min.png" />
 
     <h1 class="green">Team Chat</h1>
 
     <span class="version-badge">V1.0</span>
-  </header>
+  </nav>
   <main>
     <LeftSidebar />
     <router-view class="main-content"></router-view>
@@ -20,7 +20,7 @@ import LeftSidebar from '@/views/LeftSidebar.vue'
 <style lang="sass">
 @import './assets/base'
 
-header
+.main-nav
   display: grid
   grid-template-columns: repeat(3, 1fr)
   align-items: center

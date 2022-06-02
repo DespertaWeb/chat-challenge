@@ -20,6 +20,10 @@ export const contacts = []
     this.photo = photo
     this.chats = chats
   }
+
+  getLastChat = () => {
+    return this.chats.length ? this.chats[this.chats.length - 1] : []
+  }
 }
 
 /**
@@ -53,3 +57,9 @@ Object.values(conversations).forEach((unSortedChats, i) => {
 CONTACTS.forEach(contact => {
   contacts.push(new Contact(contact.phone, contact.contactName, contact.photo, conversations[contact.phone] || []))
 })
+contacts.sort((a,b) => {
+  const contact1 = a.getLastChat()
+  const contact2 = b.getLastChat()
+  return contact2.date - contact1.date
+})
+
