@@ -5,7 +5,7 @@ import LeftSidebar from '@/views/LeftSidebar.vue'
 
 <template>
   <header>
-    <img alt="Basf logo" class="logo" src="@/assets/logo.png" />
+    <img alt="Basf logo" class="logo" src="@/assets/logo-min.png" />
 
     <h1 class="green">Team Chat</h1>
 
@@ -19,22 +19,20 @@ import LeftSidebar from '@/views/LeftSidebar.vue'
 
 <style lang="sass">
 @import './assets/base'
-:root
-  --border: 1px
 
 header
   display: grid
   grid-template-columns: repeat(3, 1fr)
   align-items: center
   justify-items: center
-  border-bottom: var(--border) solid #e0e0e0
+  border-bottom: var(--border)
   position: static
   top: 0
   left: 0
 
   .logo
     justify-self: start
-    height: 4rem
+    height: 50px
 
   .version-badge
     justify-self: end
@@ -49,18 +47,13 @@ header
 
 main
   display: grid
-  grid-template-columns: 1fr 80vw
+  grid-template-columns: 1fr 70vw
   grid-template-rows: 1fr
-  column-gap: 1rem
-  height: calc( 100vh - 4rem - var(--border))
-
-  .left-sidebar
-    border: 1px solid #eee
-
-
-LeftSidebar
-  background: red
+  height: calc( 100vh - 4rem - var(--border-width))
 
 .main-content
-  background-color: orange
+  border-left: var(--border)
+  padding-left: var(--padding-lg)
+  padding-right: var(--padding-lg)
+  padding-bottom: var(--padding-lg)
 </style>

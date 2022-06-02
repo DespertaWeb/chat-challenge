@@ -1,15 +1,25 @@
 <template>
-  <div class="">
-    <h1>This is LeftSidebar</h1>
-  </div>
+  <section>
+    <ContactCard
+      v-for="(contact, index) in startedChats"
+      :key="index"
+      :contact="contact"
+    />
+  </section>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<script setup>
+import { ref, computed } from 'vue'
+import ContactCard from '../components/left-side-bar/ContactCard.vue'
+import { contacts as Contacts } from '../services/serializeData'
+
+const contacts = ref(Contacts)
+
+const startedChats = computed(() => {
+  return contacts.value.filter(contact => {
+    return contact.chats.length > 0
+  })
+})
+</script>
+
+<style lang="sass" scoped></style>
