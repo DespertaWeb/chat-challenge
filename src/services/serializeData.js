@@ -1,3 +1,8 @@
+/**
+ * MOCKED DATA
+ * In a Real case it should be retrieved by axios as http request and set to a LeftSideBar component, as local data
+ */
+
 import CONTACTS from '../assets/mockdata/chatsSet.json'
 import RECEIVED_MSGS from '../assets/mockdata/ReceivedMessagesSet.json'
 import SENT_MSGS from '../assets/mockdata/SentMessagesSet.json'
