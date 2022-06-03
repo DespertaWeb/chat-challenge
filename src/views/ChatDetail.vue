@@ -22,7 +22,8 @@ const { contact } = storeToRefs(store)
 </script>
 
 <style lang="sass" scoped>
-$bg: darken(#8ca8d8, 10%)
+// $bg: darken(#8ca8d8, 190%)
+$bg: lighten(#d8bc8c, 25%)
 
 main
   display: block
