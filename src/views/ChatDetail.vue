@@ -22,12 +22,12 @@ const { contact } = storeToRefs(store)
 </script>
 
 <style lang="sass" scoped>
-// $bg: darken(#8ca8d8, 190%)
-$bg: lighten(#d8bc8c, 25%)
-
 main
+  padding-top: var(--padding-xxl)
+  padding-bottom: var(--padding-xxl)
   display: block
-  background: $bg
+  background: lighten(#d8bc8c, 25%)
+
   ul
     padding: 0
 </style>
