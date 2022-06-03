@@ -18,7 +18,7 @@ export const contacts = []
  * @param chats
  * If chat's empty => The contact hasn't been contacted but still should be able to start a chat with
  **/
- class Contact {
+class Contact {
   constructor(phone, contactName, photo, chats) {
     this.phone = phone,
     this.contactName = contactName,

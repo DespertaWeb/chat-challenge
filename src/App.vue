@@ -56,4 +56,5 @@ main
   padding-left: var(--padding-lg)
   padding-right: var(--padding-lg)
   padding-bottom: var(--padding-lg)
+  overflow: auto
 </style>

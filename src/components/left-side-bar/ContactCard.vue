@@ -1,5 +1,5 @@
 <template>
-  <li>
+  <li @click="goTo">
     <img alt="Contact" class="avatar" :src="`/src/assets/${contact.photo}`" />
     <article>
       <header>
@@ -14,7 +14,13 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { onBeforeRouteUpdate } from 'vue-router'
+import { computed, nextTick } from 'vue'
+import router from '../../router'
+import { useStore } from '../../stores/chatStore'
+
+// Store
+const store = useStore()
 
 const props = defineProps({
   contact: Object
@@ -26,6 +32,16 @@ const lastChat = computed(() => {
 const lastDate = computed(() => {
   return new Date(props.contact.getLastChat().date).toLocaleDateString()
 })
+
+const goTo = async () => {
+  // react to route changes...
+
+  store.$patch({
+    contact: props.contact
+  })
+  await nextTick()
+  router.push({ name: 'ChatDetail', params: { id: props.contact.phone } })
+}
 </script>
 
 <style lang="sass" scoped>
